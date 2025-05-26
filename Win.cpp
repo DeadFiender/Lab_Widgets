@@ -25,7 +25,7 @@ layout4->addLayout(layout1);
 layout4->addLayout(layout2);
 layout4->addLayout(layout3);
 // связь сигнала нажатия кнопки и слота закрытия окна
-connect(calcbutton,SIGNAL(clicked(bool)),edit1,SLOT(add_one()));//Когда нажата кнопка "+1" — вызывается слот add_one() у edit1.
-connect(edit1,SIGNAL(tick_signal()),edit2,SLOT(add_one()));//Когда edit1 испускает сигнал tick_signal() (т.е. число делится на 5), вызывается add_one() у edit2.
-connect(exitbutton,SIGNAL(clicked(bool)),this,SLOT(close()));//Когда нажата кнопка "Выход" — вызывается метод close() у окна.
+connect(calcbutton,&QPushButton::clicked,edit1,&Counter::add_one);//Когда нажата кнопка "+1" — вызывается слот add_one() у edit1.
+connect(edit1,&Counter::tick_signal,edit2,&Counter::add_one);//Когда edit1 испускает сигнал tick_signal() (т.е. число делится на 5), вызывается add_one() у edit2.
+connect(exitbutton,&QPushButton::clicked,this,&QWidget::close);//Когда нажата кнопка "Выход" — вызывается метод close() у окна.
 }
