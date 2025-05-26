@@ -38,9 +38,9 @@ Win::Win(QWidget *parent):QWidget(parent)//Реализация конструк
     hLayout->addWidget(frame);//Основная горизонтальная компоновка: слева — frame, справа — кнопки.
     hLayout->addLayout(vLayout2);//
     begin();//Вызов метода begin() для начальной инициализации интерфейса.
-    connect(exitButton,SIGNAL(clicked(bool)),this,SLOT(close()));//При нажатии "Выход" — закрыть окно.
-    connect(nextButton,SIGNAL(clicked(bool)),this,SLOT(begin()));//При нажатии "Следующее" — очистить форму.
-    connect(inputEdit,SIGNAL(returnPressed()),this,SLOT(calc()));//При нажатии Enter в поле ввода — вычислить.
+    connect(exitButton,&QPushButton::clicked,this,&QWidget::close);//При нажатии "Выход" — закрыть окно.
+    connect(nextButton,&QPushButton::clicked,this,&Win::begin);//При нажатии "Следующее" — очистить форму.
+    connect(inputEdit,&QLineEdit::returnPressed,this,&Win::calc);//При нажатии Enter в поле ввода — вычислить.
 }
 void Win::begin()
 {//Сброс формы:
