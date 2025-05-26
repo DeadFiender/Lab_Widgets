@@ -8,7 +8,9 @@ this->setWindowTitle("Счетчик");//установка заголовка �
 label1 = new QLabel("Cчет по 1",this);//2 метки для 2 счетчиков
 label2 = new QLabel("Cчет по 5",this);
 edit1 = new Counter("0",this);
+edit1->setEnabled(false);
 edit2 = new Counter("0",this);//2 счетчика для 2 меток изначально 0
+edit2->setEnabled(false);
 calcbutton=new QPushButton("+1",this);
 exitbutton=new QPushButton("Выход",this);//создание 2 кнопок
 QHBoxLayout *layout1 = new QHBoxLayout();//горизонтальный макет для меток
