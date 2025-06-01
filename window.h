@@ -11,8 +11,8 @@ class Window : public QWidget
 protected:
     QTextCodec *codec;
     Area * area; // область отображения рисунка
-    QPushButton * btn;
+    QPushButton * btn;//кнопку "Завершить".
 public:
-    Window();
+    Window();//Конструктор класса Window
 };
 #endif
